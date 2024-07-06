@@ -75,7 +75,7 @@ const Header = () => {
             </span>
             <span>
                 <AppsIcon/>
-                <Avatar/>
+                <Avatar src={photoURL} />
             </span>
         </HeaderIcons>
 

@@ -5,82 +5,32 @@ import SearchIcon from '@mui/icons-material/Search';
 import SettingsIcon from '@mui/icons-material/Settings';
 import Avatar from '@mui/material/Avatar';
 import React from 'react';
-import styled from "styled-components";
+import './Header.css';
 
-
-const HeaderContainer = styled.div`
-    display: grid;
-    grid-template-columns: 300px auto 200px;
-    align-items: center;
-    padding: 5px 20px;
-    height: 60px;
-    border-bottom: 1px solid lightgray;
-`
-const HeaderLogo = styled.div`
-    display: flex;
-    align-items: center;
-    img {
-        width: 40px;
-    }
-    span{
-        font-size: 22px;
-        margin-left: 10px;
-        color: gray;
-    }
-`
-
-const HeaderSearch = styled.div`
-    display: flex;
-    align-items: center;
-    width: 700px;
-    background-color: whitesmoke;
-    padding: 12px;
-    border-radius: 10px;
-    input{
-        background-color: transparent;
-        border: 0;
-        outline: 0;
-        flex: 1;
-    }
-`
-const HeaderIcons = styled.div`
-    display: flex;
-    align-items: center;
-    span {
-        display: flex;
-        align-items: center;
-        margin-left: 20px;
-    }
-    svg.MuiSvgIcon-root{
-        margin: 0px 10px;
-    }
-`
-
-const Header = () => {
+const Header = ({ photoURL }) => {
   return (
-    <HeaderContainer>
-        <HeaderLogo>
-            <img src="https://upload.wikimedia.org/wikipedia/commons/d/da/Google_Drive_logo.png" alt="Google Drive" />
-            <span>Drive</span>
-        </HeaderLogo>
-        <HeaderSearch>
-            <SearchIcon/>
-            <input type="text" placeholder='Search in Drive' id="" />
-            <FormatAlignCenterIcon/>
-        </HeaderSearch>
-        <HeaderIcons>
-            <span>
-                <HelpOutlineIcon/>
-                <SettingsIcon/>
-            </span>
-            <span>
-                <AppsIcon/>
-                <Avatar src={photoURL} />
-            </span>
-        </HeaderIcons>
-
-    </HeaderContainer>
-  )
+    <div className="header-container">
+      <div className="header-logo">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/d/da/Google_Drive_logo.png" alt="Google Drive" />
+        <span>Drive</span>
+      </div>
+      <div className="header-search">
+        <SearchIcon />
+        <input type="text" placeholder="Search in Drive" />
+        <FormatAlignCenterIcon />
+      </div>
+      <div className="header-icons">
+        <span>
+          <HelpOutlineIcon />
+          <SettingsIcon />
+        </span>
+        <span>
+          <AppsIcon />
+          <Avatar src={photoURL} />
+        </span>
+      </div>
+    </div>
+  );
 }
 
-export default Header
+export default Header;

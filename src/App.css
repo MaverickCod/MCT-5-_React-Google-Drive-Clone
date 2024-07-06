@@ -1,5 +1,3 @@
-/* App.css */
-
 .app-container {
     display: flex;
   }
@@ -92,3 +90,39 @@
     margin: 10px;
   }
   
+  .login-wrapper {
+    background: lightgrey;
+    padding: 20px;
+    width: 400px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 100px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  }
+  
+  .login-wrapper img {
+    width: 100px;
+  }
+  
+  .login-wrapper button {
+    width: 100%;
+    background: darkmagenta;
+    padding: 10px 20px;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 16px;
+    border: 0;
+    outline: 0;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background 0.3s;
+  }
+  
+  .login-wrapper button:hover {
+    background: mediumvioletred;
+  }

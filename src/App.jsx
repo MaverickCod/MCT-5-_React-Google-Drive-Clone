@@ -1,50 +1,38 @@
-import { createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword } from 'firebase/auth';
-import React, { useEffect } from 'react';
+import React, { useState } from 'react';
 import './App.css';
 import Data from './components/Data';
 import Header from './components/Header';
-import SideBar from './components/SideBar';
-import { auth } from './FirebaseConfig';
+import Sidebar from './components/SideBar';
+import { auth, provider } from './FirebaseConfig';
 
 function App() {
-  useEffect(() => {
-    const unsubscribe = onAuthStateChanged(auth, (user) => {
-      if (user) {
-        console.log('User is signed in:', user);
-      } else {
-        console.log('No user is signed in');
-      }
-    });
-    return () => unsubscribe();
-  }, []);
+  const [user, setUser] = useState(null);
 
-  const handleSignUp = (email, password) => {
-    createUserWithEmailAndPassword(auth, email, password)
-      .then((userCredential) => {
-        console.log('Sign up successful:', userCredential.user);
-      })
-      .catch((error) => {
-        console.error('Error signing up:', error);
-      });
-  };
-
-  const handleSignIn = (email, password) => {
-    signInWithEmailAndPassword(auth, email, password)
-      .then((userCredential) => {
-        console.log('Sign in successful:', userCredential.user);
-      })
-      .catch((error) => {
-        console.error('Error signing in:', error);
-      });
+  const signIn = () => {
+    auth.signInWithPopup(provider)
+      .then((result) => setUser(result.user))
+      .catch((err) => alert(err));
   };
 
   return (
     <>
-      <Header />
-      <div className="app">
-        <SideBar />
-      </div>
-      <Data />
+      {user ? (
+        <>
+          <Header photoURL={user.photoURL} />
+          <div className="App">
+            <Sidebar />
+            <Data />
+          </div>
+        </>
+      ) : (
+        <div className="login-wrapper">
+          <img
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/Google_Drive_icon_%282020%29.svg/2295px-Google_Drive_icon_%282020%29.svg.png"
+            alt="gdrive"
+          />
+          <button onClick={signIn}>Login to Google Drive</button>
+        </div>
+      )}
     </>
   );
 }

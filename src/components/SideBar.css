@@ -1,0 +1,112 @@
+.sidebar-container {
+    margin-top: 10px;
+    width: 250px; /* Set a fixed width for the sidebar */
+    background-color: #fff; /* Optional: Add a background color for the sidebar */
+    height: 100vh; /* Make it span the full height of the viewport */
+    position: fixed; /* Fix it to the left side */
+    overflow-y: auto; /* Add vertical scrolling if the content overflows */
+  }
+  
+  .sidebar-btn button {
+    background: transparent;
+    border: 1px solid lightgray;
+    display: flex;
+    align-items: center;
+    border-radius: 40px;
+    padding: 5px 10px;
+    box-shadow: 2px 2px 2px #ccc;
+    margin-left: 20px;
+  }
+  
+  .sidebar-btn button span {
+    font-size: 16px;
+    margin-right: 20px;
+    margin-left: 10px;
+  }
+  
+  .sidebar-options {
+    margin-top: 10px;
+  }
+  
+  .sidebar-options .progress_bar {
+    padding: 0px 20px;
+  }
+  
+  .sidebar-options .progress_bar span {
+    display: block;
+    color: #333;
+    font-size: 13px;
+  }
+  
+  .sidebar-option {
+    display: flex;
+    align-items: center;
+    padding: 8px 20px;
+    border-radius: 0px 20px 20px 0px;
+  }
+  
+  .sidebar-option:hover {
+    background: whitesmoke;
+    cursor: pointer;
+  }
+  
+  .sidebar-option svg.MuiSvgIcon-root {
+    color: rgb(78, 78, 78);
+  }
+  
+  .sidebar-option span {
+    margin-left: 15px;
+    font-size: 13px;
+    font-weight: 500;
+    color: rgb(78, 78, 78);
+  }
+  
+  .modal-popup {
+    top: 50%;
+    background-color: #fff;
+    width: 500px;
+    margin: 0 auto;
+    position: absolute;
+    transform: translateY(-50%);
+    padding: 10px;
+    border-radius: 10px;
+  }
+  
+  .modal-heading {
+    text-align: center;
+    border-bottom: 1px solid lightgray;
+    height: 40px;
+  }
+  
+  .modal-body input.modal__submit {
+    width: 100%;
+    background: darkmagenta;
+    padding: 10px 20px;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    font-size: 16px;
+    border: 0;
+    outline: 0;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+  }
+  
+  .modal-body input.modal__file {
+    background: whitesmoke;
+    padding: 20px;
+    color: #000;
+    display: block;
+    margin-top: 20px;
+  }
+  
+  .uploading-para {
+    background: green;
+    color: #fff;
+    margin: 20px;
+    text-align: center;
+    padding: 10px;
+    letter-spacing: 1px;
+  }
+  

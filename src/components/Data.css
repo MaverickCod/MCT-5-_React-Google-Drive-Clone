@@ -1,0 +1,83 @@
+/* Parent container that holds the data-container and allows it to be positioned to the right */
+.parent-container {
+  display: flex;
+  justify-content: flex-end; /* Aligns child elements to the right */
+  padding: 20px;
+}
+
+.data-container {
+  width: 300px; /* Adjust width as needed */
+  padding: 10px 0px 0px 20px;
+  border: 1px solid #ccc; /* Optional: add border for better visibility */
+  background-color: #f9f9f9; /* Optional: background color */
+}
+
+.data-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid lightgray;
+  height: 40px;
+}
+
+.data-header .header-left {
+  display: flex;
+  align-items: center;
+}
+
+.data-header .header-right svg {
+  margin: 0px 10px;
+}
+
+.data-grid {
+  display: flex;
+  align-items: center;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.data-file {
+  text-align: center;
+  border: 1px solid rgb(204 204 204 / 46%);
+  margin: 10px;
+  min-width: 200px;
+  padding: 10px 0px 0px 0px;
+  border-radius: 5px;
+}
+
+.data-file svg {
+  font-size: 60px;
+  color: gray;
+}
+
+.data-file p {
+  border-top: 1px solid #ccc;
+  margin-top: 5px;
+  font-size: 12px;
+  background: whitesmoke;
+  padding: 10px 0px;
+}
+
+.data-list-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #ccc;
+  padding: 10px;
+}
+
+.data-list-row p {
+  display: flex;
+  align-items: center;
+  font-size: 13px;
+}
+
+.data-list-row p b {
+  display: flex;
+  align-items: center;
+}
+
+.data-list-row p svg {
+  font-size: 22px;
+  margin: 10px;
+}
